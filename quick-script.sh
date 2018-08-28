@@ -26,3 +26,11 @@ eval $TASK_INSTALL_COMMAND
 eval $TASK_START_COMMAND
 eval $TASK_END_COMMAND
 
+# 4.) Save Node Moment
+NODE_CPU_USAGE="$(inxi -t c)"
+NODE_MEMORY_USAGE="$(inxi -t m)"
+NODE_HARD_DISK_USAGE="$(inxi -p)"
+NODE_TEMPERATURE="$(inxi -s)"
+NODE_WEATHER="$(inxi -w)"
+NODE_MOMENT_RESULT=$(curl --data "node_hash_id=${NODE_HASH_ID}&cpu_usage=${NODE_CPU_USAGE}&memory_usage=${NODE_MEMORY_USAGE}&hard_disk_usage=${NODE_HARD_DISK_USAGE}&temperature=${NODE_TEMPERATURE}&weather=${NODE_WEATHER}" "${TASK_API_URL}/nodemoment/create")
+NODE_MOMENT_HASH_ID=$(jq -r '.node_moment_hash_id' <<<"$NODE_MOMENT_RESULT")
