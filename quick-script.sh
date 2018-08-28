@@ -7,7 +7,7 @@ sudo apt -y --force-yes install jq curl
 #setup ENV
 TASK_API_URL="localhost"
 
-# 1.) Get the task
+# 1.) Get the node
 NODE_SYSTEM="$(inxi -S)"
 NODE_CPU="$(inxi -C)"
 NODE_HARD_DISK="$(inxi -p)"
