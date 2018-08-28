@@ -17,5 +17,3 @@ for ((i = 0; i < $n_elements; i ++)); do
 done
 
 . $SHELL_HOME/TaskAPI-RaspberryPi-Usage/scripts/helpers/destroy-env.sh
-
-echo $NODE_HASH_ID

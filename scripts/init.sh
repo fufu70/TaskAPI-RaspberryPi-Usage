@@ -12,5 +12,5 @@ sudo apt -y --force-yes install vim nmap
 #install git for getting necessary packages
 sudo apt -y --force-yes install git 
 
-#install curl for requesting information from the TaskAPI
-sudo apt -y --force-yes install curl
+#install curl for requesting information from the TaskAPI and JQ to parse the JSON objects
+sudo apt -y --force-yes install curl jq
