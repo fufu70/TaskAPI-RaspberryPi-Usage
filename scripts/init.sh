@@ -14,3 +14,6 @@ sudo apt -y --force-yes install git
 
 #install curl for requesting information from the TaskAPI and JQ to parse the JSON objects
 sudo apt -y --force-yes install curl jq
+
+#install inxi to provide metrics to the task api
+sudo apt -y --force-yes install inxi
