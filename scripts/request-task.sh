@@ -3,7 +3,7 @@
 eval $(cat $SHELL_HOME/$ENVIRONMENT_FILE_NAME)
 
 if [ "$HAS_TASK" = false ]; then
-    sed -i bak '/HAS_TASK/d' $SHELL_HOME/$ENVIRONMENT_FILE_NAME; echo "HAS_TASK=true" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
+    sed -i '/HAS_TASK/d' $SHELL_HOME/$ENVIRONMENT_FILE_NAME; echo "HAS_TASK=true" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
 
     # request task
     TASK_RESULT=$(curl --data "node_hash_id=${NODE_HASH_ID}" "${TASK_API_URL}/task/request")
@@ -20,5 +20,5 @@ if [ "$HAS_TASK" = false ]; then
         eval $TASK_END_COMMAND
     fi
 
-    sed -i bak '/HAS_TASK/d' $SHELL_HOME/$ENVIRONMENT_FILE_NAME; echo "HAS_TASK=false" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
+    sed -i '/HAS_TASK/d' $SHELL_HOME/$ENVIRONMENT_FILE_NAME; echo "HAS_TASK=false" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
 fi
