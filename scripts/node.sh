@@ -1,5 +1,6 @@
 #!/bin/bash
 # Saves the current node on to the TaskAPI and stores the node_hash_id locally.
+eval $(cat /home/pi/.task_environment)
 
 if [ -z $NODE_HASH_ID]; then
     NODE_SYSTEM="$(inxi -S)"
