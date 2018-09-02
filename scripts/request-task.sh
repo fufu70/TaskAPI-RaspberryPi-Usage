@@ -1,6 +1,6 @@
 #!/bin/bash
 # Gets a task if its not currently working on it and then operates on it.
-eval $(cat $SHELL_HOME/$ENVIRONMENT_FILE_NAME)
+eval $(cat /home/pi/.task_environment)
 
 if [ "$HAS_TASK" = false ]; then
     sed -i '/HAS_TASK/d' $SHELL_HOME/$ENVIRONMENT_FILE_NAME; echo "HAS_TASK=true" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME

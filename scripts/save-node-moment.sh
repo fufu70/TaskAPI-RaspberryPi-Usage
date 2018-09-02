@@ -1,6 +1,6 @@
 #!/bin/bash
 # Saves current moment of the node to the TaskAPI
-eval $(cat $SHELL_HOME/$ENVIRONMENT_FILE_NAME)
+eval $(cat /home/pi/.task_environment)
 
 if [ -n "$NODE_HASH_ID" ]; then
     NODE_CPU_USAGE="$(inxi -t c)"
