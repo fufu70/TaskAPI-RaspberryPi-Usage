@@ -9,7 +9,7 @@ DEFAULT_PASSWORD='raspberry'
 eval $(cat $1/$ENVIRONMENT_FILE_NAME)
 
 # if environment is not read setup local environment
-if [ -z $SHELL_HOME ]; then
+if [ -z $NODE_HASH_ID ]; then
     # write to env file
     echo "SHELL_HOME=${SHELL_HOME}" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
     echo "TASK_API_URL=${TASK_API_URL}" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
