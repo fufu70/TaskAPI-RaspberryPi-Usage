@@ -2,14 +2,14 @@
 
 ENVIRONMENT_FILE_NAME='.task_environment'
 
+SHELL_HOME=$1
+TASK_API_URL=$2
+DEFAULT_PASSWORD='raspberry'
 # load local environment
 eval $(cat $1/$ENVIRONMENT_FILE_NAME)
 
 # if environment is not read setup local environment
 if [ -z $SHELL_HOME ]; then
-    SHELL_HOME=$1
-    TASK_API_URL=$2
-    DEFAULT_PASSWORD='raspberry'
     # write to env file
     echo "SHELL_HOME=${SHELL_HOME}" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
     echo "TASK_API_URL=${TASK_API_URL}" >> $SHELL_HOME/$ENVIRONMENT_FILE_NAME
